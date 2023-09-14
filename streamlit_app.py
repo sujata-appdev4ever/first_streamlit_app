@@ -45,15 +45,16 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-
 # Adding second text entry
+fruit_choice = streamlit.txt_input ('What fruit would you like information about?','Apple')
+streamlit.write('The user entered ', fruit_choice)
+
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/fruit choice)
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/fruit_choice)
 
 # take the json verson of the response and normalized it
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 #  show output  in the screen as table
 streamlit.dataframe(fruityvice_normalized)
-fruit_choice = streamlit.txt_input ('What fruit would you like information about?','Apple')
-streamlit.write('The user entered ', fruit_choice)
+
 
