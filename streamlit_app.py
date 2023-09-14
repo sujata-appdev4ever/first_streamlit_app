@@ -48,5 +48,11 @@ streamlit.dataframe(my_data_rows)
 # Adding second text entry
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/banana")
-streamlit.text(fruityvice_response)
+streamlit.text(fruityvice_response.json())
+
+# take the json verson of the response and normalized it
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#  show output  in the screen as table
+streamlit.dataframe(fruityvice_normalized)
+
 
