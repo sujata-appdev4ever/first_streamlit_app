@@ -45,7 +45,6 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-# Adding second text entry
 fruit_choice = streamlit.txt_input ('What fruit would you like information about?','banana')
 streamlit.write('The user entered ', fruit_choice)
 
