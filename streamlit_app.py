@@ -45,6 +45,15 @@ streamlit.dataframe(my_data_rows)
 fruit_choice = streamlit.text_input('What fruit would you like information about?:', 'banana')
 streamlit.write('The user entered ', fruit_choice)
 
+#Allow the end user to add a fruit to the list
+# Read the fruit data from the CSV file
+my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+my_fruit_list = my_fruit_list.set_index('Fruit')
+
+# Add "jackfruit" to the list of fruits
+my_fruit_list = my_fruit_list.append({'Protein (g)': 1.23, 'Carbs (g)': 23.45, 'Fat (g)': 0.67}, ignore_index=True)
+
+
 
 
 
