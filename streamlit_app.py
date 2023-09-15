@@ -1,9 +1,4 @@
 import streamlit
-import pandas
-import request
-import snowflake.connector
-from urllib.error import URLError
-
 streamlit.title('My Parents New Healthy Diner')
 
 streamlit.header('Breakfast Menu')
@@ -39,7 +34,7 @@ try:
 except URLError as e:
     streamlit.error()
 
-
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("select * from fruit_load_list")
@@ -54,6 +49,7 @@ streamlit.write('Thanks for adding', add_my_fruit)
 # This will not work correctly, but just go with it for now
 my_cur.execute("insert into fruit_load_list values ('from fruit_load_lit')")
 
+from urllib.error import URLError
 
 
 
