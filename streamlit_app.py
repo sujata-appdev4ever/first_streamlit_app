@@ -42,7 +42,7 @@ streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
 # Add a text entry box after displaying the table
-fruit_choice = streamlit.text_input('What fruit would you like information about?:', 'banana')
+fruit_choice = streamlit.text_input('What fruit would you like to add?:', 'jackfruit')
 streamlit.write('The user entered ', fruit_choice)
 
 #Allow the end user to add a fruit to the list
