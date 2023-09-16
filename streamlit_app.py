@@ -38,7 +38,7 @@ try:
 except URLError as e:
     streamlit.error()
 
-# import snowflake.connector
+import snowflake.connector
 
 streamlit.header("View Our Fruit List- Add Your Favorites!")
 #Snowflake-related functions
